@@ -4,17 +4,16 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 
 import cls from './styles/Label.module.scss'
 
-import { TLabelSize } from '../model/types/TLabelSize'
-import { TLabelColor } from '../model/types/TLabelColor'
 import { TLabelAlign } from '../model/types/TLabelAlign'
 import { TLabelHtmlTag } from '../model/types/TLabelHtmlTag'
+import { TEntitySize } from '@/shared/types/TEntitySize.ts'
+import { TEntityColor } from '@/shared/types/TEntityColor.ts'
 
 type LabelProps<T> = {
-    size?: TLabelSize
-    color?: TLabelColor
+    size?: TEntitySize
+    color?: TEntityColor
     align?: TLabelAlign
     noWrap?: boolean
-    bold?: boolean
     className?: string
     children: ReactNode
     as?: T
@@ -24,11 +23,10 @@ export const Label = <T extends ElementType>(
     props: LabelProps<T extends TLabelHtmlTag ? T : 'span'>
 ) => {
     const {
-        color = 'main',
+        color = 'primary',
         size = 'm',
         align = 'left',
         className = '',
-        bold = false,
         noWrap = false,
 
         children,
@@ -36,15 +34,10 @@ export const Label = <T extends ElementType>(
     } = props
 
     const Tag = as || 'p'
+    const additional = [cls[size], cls[color], cls[align], className]
+
     return (
-        <Tag
-            className={classNames(cls.Text, { [cls.bold!]: bold, [cls.noWrap]: noWrap }, [
-                cls[size],
-                cls[color],
-                cls[align],
-                className
-            ])}
-        >
+        <Tag className={classNames(cls.Label, { [cls.noWrap]: noWrap }, additional)}>
             {children}
         </Tag>
     )

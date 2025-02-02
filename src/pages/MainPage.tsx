@@ -5,9 +5,11 @@ import { CircularProgress } from '@/shared/ui-kit/CircularProgress'
 
 export const MainPage: FC = () => {
     return (
-        <VStack gap={'8'}>
+        <VStack gap={'s'}>
             <CircularProgress />
-            <Label>Загрузка...</Label>
+            <Label size={'l'} color={'secondary'}>
+                Загрузка...
+            </Label>
         </VStack>
     )
 }

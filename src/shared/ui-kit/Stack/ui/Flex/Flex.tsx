@@ -2,12 +2,12 @@ import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
 
 import cls from './Flex.module.scss'
 import { classNames, Mods } from '@/shared/lib/classNames/classNames.ts'
+import { TEntitySize } from '@/shared/types/TEntitySize.ts'
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between'
 export type FlexAlign = 'start' | 'center' | 'end'
 export type FlexDirection = 'row' | 'column'
 export type FlexWrap = 'nowrap' | 'wrap'
-export type FlexGap = '4' | '8' | '16' | '24' | '32'
 
 const justifyClasses: Record<FlexJustify, string | undefined> = {
     start: cls.justifyStart,
@@ -27,12 +27,10 @@ const directionClasses: Record<FlexDirection, string | undefined> = {
     column: cls.directionColumn
 }
 
-const gapClasses: Record<FlexGap, string | undefined> = {
-    4: cls.gap4,
-    8: cls.gap8,
-    16: cls.gap16,
-    24: cls.gap24,
-    32: cls.gap32
+const gapClasses: Record<TEntitySize, string | undefined> = {
+    s: cls.gapS,
+    m: cls.gapM,
+    l: cls.gapL
 }
 
 type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
@@ -43,7 +41,7 @@ export interface FlexProps extends DivProps {
     align?: FlexAlign
     direction: FlexDirection
     wrap?: FlexWrap
-    gap?: FlexGap
+    gap?: TEntitySize
     max?: boolean
 }
 

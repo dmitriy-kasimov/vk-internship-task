@@ -1,13 +1,13 @@
 import { FC } from 'react'
 
 import cls from './CircularProgress.module.scss'
-import { TCircularProgressSize } from '../model/types/TCircularProgressSize.ts'
-import { TCircularProgressColor } from '../model/types/TCircularProgressColor.ts'
 import { classNames } from '@/shared/lib/classNames/classNames.ts'
+import { TEntitySize } from '@/shared/types/TEntitySize.ts'
+import { TEntityColor } from '@/shared/types/TEntityColor.ts'
 
 type CircularProgressProps = {
-    color?: TCircularProgressColor
-    size?: TCircularProgressSize
+    color?: TEntityColor
+    size?: TEntitySize
 }
 
 export const CircularProgress: FC<CircularProgressProps> = ({
