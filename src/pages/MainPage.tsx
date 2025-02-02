@@ -10,7 +10,7 @@ export const MainPage: FC = () => {
                 <Button size={'s'}>
                     <Label size={'s'}>Test</Label>
                 </Button>
-                <Button size={'m'}>
+                <Button size={'m'} disabled>
                     <Label size={'m'}>Test</Label>
                 </Button>
                 <Button size={'l'}>

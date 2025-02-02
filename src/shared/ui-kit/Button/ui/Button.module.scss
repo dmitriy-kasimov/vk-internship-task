@@ -1,5 +1,22 @@
 .Button{
-
+  cursor: pointer;
+  transition-duration: 500ms;
+  animation-timing-function: cubic-bezier(0, -0.3,0.5,1.3);
+  &:hover{
+    opacity: 0.88;
+  }
+  &:active{
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
+  &:focus {
+    outline: 3px solid #0099FF;
+    outline-offset: 2px;
+  }
+}
+.disabled{
+  pointer-events: none;
+  opacity: 0.36;
 }
 
 .primary {
