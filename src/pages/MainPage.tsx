@@ -1,15 +1,47 @@
 import { FC } from 'react'
 import { Label } from '@/shared/ui-kit/Label'
-import { VStack } from '@/shared/ui-kit/Stack'
-import { CircularProgress } from '@/shared/ui-kit/CircularProgress'
+import { HStack, VStack } from '@/shared/ui-kit/Stack'
+import { Button } from '@/shared/ui-kit/Button'
 
 export const MainPage: FC = () => {
     return (
-        <VStack gap={'s'}>
-            <CircularProgress />
-            <Label size={'l'} color={'secondary'}>
-                Загрузка...
-            </Label>
-        </VStack>
+        <HStack gap={'l'}>
+            <VStack gap={'m'}>
+                <Button size={'s'}>
+                    <Label size={'s'}>Test</Label>
+                </Button>
+                <Button size={'m'}>
+                    <Label size={'m'}>Test</Label>
+                </Button>
+                <Button size={'l'}>
+                    <Label size={'l'}>Test</Label>
+                </Button>
+                <Button size={'l'} isLoading>
+                    <Label size={'l'}>Test</Label>
+                </Button>
+            </VStack>
+            <VStack gap={'m'}>
+                <Button size={'s'} fill={'secondary'}>
+                    <Label size={'s'} color={'secondary'}>
+                        Test
+                    </Label>
+                </Button>
+                <Button size={'m'} fill={'secondary'}>
+                    <Label color={'secondary'} size={'m'}>
+                        Test
+                    </Label>
+                </Button>
+                <Button size={'l'} fill={'secondary'}>
+                    <Label color={'secondary'} size={'l'}>
+                        Test
+                    </Label>
+                </Button>
+                <Button size={'l'} fill={'secondary'} isLoading>
+                    <Label color={'secondary'} size={'l'}>
+                        Test
+                    </Label>
+                </Button>
+            </VStack>
+        </HStack>
     )
 }
