@@ -1,0 +1,13 @@
+@use './normalization';
+@use './reset';
+@use 'fonts';
+
+// themes
+@use './themes/light';
+
+.app {
+    min-height: 100vh;
+    background: var(--color-bg-dark);
+    font: var(--font-m);
+    padding: 0 calc(20px - (100vw - 100%)) 0 0;
+}
