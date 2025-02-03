@@ -1,6 +1,6 @@
 import { ElementType } from 'react'
 
-import { classNames } from '@/shared/lib/classNames/classNames'
+import { classNames, Mods } from '@/shared/lib/classNames/classNames'
 
 import cls from './styles/Label.module.scss'
 
@@ -39,8 +39,13 @@ export const Label = <T extends ElementType>(
     const Tag = as || 'p'
     const additional = [cls[size], cls[color], cls[align], className]
 
+    const mods: Mods = {
+        [cls.noWrap]: noWrap,
+        [cls.lengthLimited]: maxLength !== Infinity
+    }
+
     return (
-        <Tag className={classNames(cls.Label, { [cls.noWrap]: noWrap }, additional)}>
+        <Tag className={classNames(cls.Label, mods, additional)}>
             {truncateLabel(children, maxLength)}
         </Tag>
     )

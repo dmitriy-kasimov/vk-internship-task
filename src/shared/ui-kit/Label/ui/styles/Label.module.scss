@@ -6,6 +6,11 @@
     font-weight: 500;
 }
 
+.lengthLimited{
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 .noWrap{
     white-space: nowrap;
 }

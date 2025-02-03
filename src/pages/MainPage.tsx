@@ -8,7 +8,9 @@ export const MainPage: FC = () => {
         <HStack gap={'l'}>
             <VStack gap={'m'}>
                 <Button size={'s'}>
-                    <Label size={'s'}>Test</Label>
+                    <Label size={'s'} maxLength={3}>
+                        Test
+                    </Label>
                 </Button>
                 <Button size={'m'} disabled>
                     <Label size={'m'}>Test</Label>
