@@ -6,12 +6,12 @@ import cls from './styles/Label.module.scss'
 
 import { TLabelAlign } from '../model/types/TLabelAlign'
 import { TLabelHtmlTag } from '../model/types/TLabelHtmlTag'
-import { TEntitySize } from '@/shared/types/TEntitySize.ts'
 import { TEntityColor } from '@/shared/types/TEntityColor.ts'
 import { truncateLabel } from '@/shared/ui-kit/Label/helpers/truncateLabel.ts'
+import { TLabelSize } from '@/shared/ui-kit/Label/model/types/TLabelSize.ts'
 
 type LabelProps<T> = {
-    size?: TEntitySize
+    size?: TLabelSize
     color?: TEntityColor
     align?: TLabelAlign
     noWrap?: boolean
@@ -26,7 +26,7 @@ export const Label = <T extends ElementType>(
 ) => {
     const {
         color = 'primary',
-        size = 'm',
+        size = 'xs',
         align = 'left',
         className = '',
         noWrap = false,
