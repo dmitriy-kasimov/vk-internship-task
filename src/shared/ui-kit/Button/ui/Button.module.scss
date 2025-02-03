@@ -40,3 +40,42 @@
   padding: 1rem;
   border-radius: 1rem;
 }
+
+.shimmer-primary{
+  &::before{
+    background: linear-gradient(to right, transparent 0%, var(--color-text-primary) 50%, transparent 100%);
+  }
+}
+.shimmer-secondary{
+  &::before{
+    background: linear-gradient(to right, transparent 0%, var(--color-text-secondary) 50%, transparent 100%);
+  }
+}
+
+.isLoading {
+  pointer-events: none;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -150px;
+    top: 0;
+    height: 100%;
+    width: 66%;
+    animation: load 1000ms linear infinite;
+    opacity: 0.12;
+  }
+}
+
+@keyframes load {
+  from {
+    left: -150px;
+  }
+
+  to {
+    left: 100%;
+  }
+}

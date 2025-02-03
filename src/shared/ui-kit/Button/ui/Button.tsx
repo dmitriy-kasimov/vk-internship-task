@@ -15,7 +15,8 @@ export const Button: FC<IButtonProps> = ({
 }) => {
     const mods: Mods = {
         [cls.disabled]: disabled,
-        [cls.isLoading]: isLoading
+        [cls.isLoading]: isLoading,
+        [cls[`shimmer-${fill}`]]: isLoading
     }
     const additional = [cls[fill], cls[size]]
     return (
