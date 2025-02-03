@@ -9,11 +9,6 @@ export default tseslint.config(
     { ignores: ['dist', 'eslint.config.js', 'node_modules', '.git'] },
     {
         extends: [js.configs.recommended, ...tseslint.configs.recommended],
-        env: {
-            browser: true,
-            es2021: true,
-            jest: true
-        },
         files: ['**/*.{ts,tsx}'],
         languageOptions: {
             ecmaVersion: 2020,
