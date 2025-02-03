@@ -25,20 +25,28 @@ export const Counter: FC<CounterProps> = ({
         8: null,
         12: null,
         16: (
-            <Label size={'xs'} color={color}>
+            <Label data-testid={'counter-value'} size={'xs'} color={color}>
                 {counterValue}
             </Label>
         ),
         20: (
-            <Label size={'s'} color={color}>
+            <Label data-testid={'counter-value'} size={'s'} color={color}>
                 {counterValue}
             </Label>
         ),
         24: (
-            <Label size={'m'} color={color}>
+            <Label data-testid={'counter-value'} size={'m'} color={color}>
                 {counterValue}
             </Label>
         )
     }
-    return <Pulse size={size} fill={color} children={mapQuantityToLabel[size]} pulse={pulse} />
+    return (
+        <Pulse
+            data-testid={'counter'}
+            size={size}
+            fill={color}
+            children={mapQuantityToLabel[size]}
+            pulse={pulse}
+        />
+    )
 }

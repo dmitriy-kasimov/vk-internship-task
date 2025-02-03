@@ -33,7 +33,8 @@ export const Label = <T extends ElementType>(
 
         children,
         maxLength = Infinity,
-        as
+        as,
+        ...otherProps
     } = props
 
     const Tag = as || 'p'
@@ -45,7 +46,11 @@ export const Label = <T extends ElementType>(
     }
 
     return (
-        <Tag className={classNames(cls.Label, mods, additional)}>
+        <Tag
+            data-testid={'Label'}
+            className={classNames(cls.Label, mods, additional)}
+            {...otherProps}
+        >
             {truncateLabel(children, maxLength)}
         </Tag>
     )

@@ -6,4 +6,9 @@ describe('Button', () => {
         render(<Button>MyButton</Button>)
         expect(screen.getByText('MyButton')).toBeInTheDocument()
     })
+
+    test('Test secondary fill', () => {
+        render(<Button fill={'secondary'}>MyButton</Button>)
+        expect(screen.getByText('MyButton')).toHaveClass('secondary')
+    })
 })

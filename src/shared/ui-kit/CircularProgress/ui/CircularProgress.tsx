@@ -15,5 +15,7 @@ export const CircularProgress: FC<CircularProgressProps> = ({
     color = 'primary'
 }) => {
     const additional = [cls[size], cls[color]]
-    return <div className={classNames(cls.loader, {}, additional)} />
+    return (
+        <div data-testid='circular-progress' className={classNames(cls.loader, {}, additional)} />
+    )
 }
