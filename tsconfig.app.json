@@ -24,7 +24,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    //Замена common.js на import/export
+    "esModuleInterop": true,
   },
-  "include": ["src"]
+  "include": ["src", "./.jest/setupTests.ts"]
 }
