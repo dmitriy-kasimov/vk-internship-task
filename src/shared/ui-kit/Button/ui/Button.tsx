@@ -18,9 +18,11 @@ export const Button: FC<IButtonProps> = ({
         [cls.isLoading]: isLoading,
         [cls[`shimmer-${fill}`]]: isLoading
     }
+
     const additional = [cls[fill], cls[size]]
+
     return (
-        <button className={classNames(cls.Button, mods, additional)} {...props}>
+        <button className={classNames(cls.Button, mods, additional)} disabled={disabled} {...props}>
             {isLoading ? <CircularProgress size={size} color={fill} /> : children}
         </button>
     )

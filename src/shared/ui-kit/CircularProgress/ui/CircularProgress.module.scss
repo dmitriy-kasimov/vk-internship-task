@@ -32,11 +32,11 @@
   border-color: var(--color-text-secondary);
 }
 
-.small,
-.medium,
-.large {
+.s,
+.m,
+.l {
   border-style: solid;
 }
-.small { border-width: 8px }
-.medium { border-width: 12px }
-.large { border-width: 16px }
+.s { width: 16px; border-width: 2px }
+.m { width: 20px; border-width: 2.5px }
+.l { width: 24px; border-width: 3px }
