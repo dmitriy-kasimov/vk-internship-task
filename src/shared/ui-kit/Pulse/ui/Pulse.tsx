@@ -1,9 +1,10 @@
 import { FC, ReactNode } from 'react'
-import { TEntityColor } from '@/shared/types/TEntityColor.ts'
 
-import cls from './Pulse.module.scss'
+import { TEntityColor } from '@/shared/types/TEntityColor.ts'
 import { classNames, Mods } from '@/shared/lib/classNames/classNames.ts'
 import { TEntitySizePx } from '@/shared/types/TEntitySizePx.ts'
+
+import cls from './Pulse.module.scss'
 
 type PulseProps = {
     fill?: TEntityColor

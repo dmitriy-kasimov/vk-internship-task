@@ -1,14 +1,14 @@
 import { ElementType } from 'react'
 
 import { classNames, Mods } from '@/shared/lib/classNames/classNames'
+import { TEntityColor } from '@/shared/types/TEntityColor.ts'
 
 import cls from './styles/Label.module.scss'
 
+import { truncateLabel } from '../helpers/truncateLabel.ts'
+import { TLabelSize } from '../model/types/TLabelSize.ts'
 import { TLabelAlign } from '../model/types/TLabelAlign'
 import { TLabelHtmlTag } from '../model/types/TLabelHtmlTag'
-import { TEntityColor } from '@/shared/types/TEntityColor.ts'
-import { truncateLabel } from '@/shared/ui-kit/Label/helpers/truncateLabel.ts'
-import { TLabelSize } from '@/shared/ui-kit/Label/model/types/TLabelSize.ts'
 
 type LabelProps<T> = {
     size?: TLabelSize

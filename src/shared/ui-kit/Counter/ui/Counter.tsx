@@ -1,9 +1,11 @@
 import { FC, ReactNode } from 'react'
-import { Pulse } from '@/shared/ui-kit/Pulse/ui/Pulse.tsx'
-import { TEntityColor } from '@/shared/types/TEntityColor.ts'
-import { TEntitySizePx } from '@/shared/types/TEntitySizePx.ts'
+
+import { TEntityColor } from '@/shared/types/TEntityColor'
+import { TEntitySizePx } from '@/shared/types/TEntitySizePx'
+import { Pulse } from '@/shared/ui-kit/Pulse'
 import { Label } from '@/shared/ui-kit/Label'
-import { truncateNumber } from '@/shared/ui-kit/Counter/helpers/truncateNumber.ts'
+
+import { truncateNumber } from '../helpers/truncateNumber.ts'
 
 type CounterProps = {
     color?: TEntityColor
